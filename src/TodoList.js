@@ -10,7 +10,7 @@ class TodoList extends React.Component {
           items.map((item, index) => (
             <li key={index}>
               {item}
-              <button>X</button>
+              <button data-index={index} onClick={this.props.onDelete}>X</button>
             </li>
           ))
         }

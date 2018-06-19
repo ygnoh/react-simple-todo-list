@@ -15,7 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <TodoList items={this.state.items} />
+        <TodoList items={this.state.items} onDelete={this.handleDeleteItem} />
 
         <form onSubmit={this.handleSubmit}>
           <input type='text' value={this.state.value} onChange={this.handleChangeValue} />
@@ -36,6 +36,14 @@ class App extends React.Component {
   handleChangeValue = event => {
     this.setState({value: event.target.value});
   };
+
+  handleDeleteItem = event => {
+    const index = parseInt(event.target.dataset.index);
+
+    this.setState({
+      items: this.state.items.filter((_, i) => i !== index)
+    });
+  }
 }
 
 export default App;
