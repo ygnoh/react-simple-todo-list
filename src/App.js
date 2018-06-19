@@ -16,13 +16,18 @@ class App extends React.Component {
       <React.Fragment>
         <TodoList />
 
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input type='text' value={this.state.value} onChange={this.handleChangeValue} />
           <button>submit</button>
         </form>
       </React.Fragment>
     );
   }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log(this.state.value);
+  };
 
   handleChangeValue = event => {
     this.setState({value: event.target.value});
