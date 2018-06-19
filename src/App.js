@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.css';
+import TodoList from './TodoList';
 
 class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <ul>
-          <li>list #1</li>
-          <li>list #2</li>
-          <li>list #3</li>
-        </ul>
+        <TodoList />
 
         <form>
           <input type="text" />
