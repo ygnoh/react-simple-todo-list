@@ -7,7 +7,12 @@ class TodoList extends React.Component {
     return (
       <ul>
         {
-          items.map((item, index) => <li key={index}>{item}</li>)
+          items.map((item, index) => (
+            <li key={index}>
+              {item}
+              <button>X</button>
+            </li>
+          ))
         }
       </ul>
     );
