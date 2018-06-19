@@ -8,7 +8,7 @@ class App extends React.Component {
 
     this.state = {
       value: '',
-      items: ["item1", "item2", "item3"]
+      items: []
     };
   }
 
@@ -27,7 +27,9 @@ class App extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state.value);
+    this.setState({
+      items: [...this.state.items, this.state.value]
+    });
   };
 
   handleChangeValue = event => {
