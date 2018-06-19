@@ -2,11 +2,13 @@ import React from 'react';
 
 class TodoList extends React.Component {
   render() {
+    const items = this.props.items;
+
     return (
       <ul>
-        <li>list #1</li>
-        <li>list #2</li>
-        <li>list #3</li>
+        {
+          items.map((item, index) => <li key={index}>{item}</li>)
+        }
       </ul>
     );
   }
