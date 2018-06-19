@@ -28,7 +28,8 @@ class App extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     this.setState({
-      items: [...this.state.items, this.state.value]
+      items: [...this.state.items, this.state.value],
+      value: ''
     });
   };
 
